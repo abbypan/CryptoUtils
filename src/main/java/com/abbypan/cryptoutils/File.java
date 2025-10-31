@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class FileUtils {
+public class File {
     
     /**
      * Reads all bytes from a file (slurp operation)
@@ -13,24 +13,12 @@ public class FileUtils {
      * @return the file contents as a byte array
      * @throws IOException if the file cannot be read
      */
-    public static byte[] slurp(String filename) throws IOException {
+    public static byte[] Slurp(String filename) throws IOException {
         Path path = Paths.get(filename);
         return Files.readAllBytes(path);
     }
     
-    /**
-     * Reads all bytes from a file (slurp operation) - legacy method name
-     * @param filename the path to the file to read
-     * @return the file contents as a byte array
-     * @throws Exception if the file cannot be read
-     */
-    public static byte[] Slurp(String filename) throws Exception {
-        try {
-            return slurp(filename);
-        } catch (IOException e) {
-            throw new Exception("Failed to read file: " + filename, e);
-        }
-    }
+   
     
     /**
      * Writes bytes to a file
@@ -60,7 +48,7 @@ public class FileUtils {
      * @throws IOException if the file cannot be read
      */
     public static String readString(String filename) throws IOException {
-        byte[] bytes = slurp(filename);
+        byte[] bytes = Slurp(filename);
         return new String(bytes);
     }
     

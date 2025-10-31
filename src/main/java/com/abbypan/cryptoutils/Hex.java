@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.HexFormat;
 
-public class HexUtils {
+public class Hex {
     
     /**
      * Converts a hex string to byte array

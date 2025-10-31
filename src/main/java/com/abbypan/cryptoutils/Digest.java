@@ -109,4 +109,24 @@ public class Digest {
     public static byte[] sha512(byte[] data) throws NoSuchAlgorithmException {
         return digest("SHA-512", data);
     }
+    
+    /**
+     * Computes the SHA3-256 hash of the input data
+     * @param data the input data to hash
+     * @return the SHA3-256 hash as a byte array
+     * @throws NoSuchAlgorithmException if SHA3-256 is not available
+     */
+    public static byte[] sha3_256(byte[] data) throws NoSuchAlgorithmException {
+        return digest("SHA3-256", data);
+    }
+    
+    /**
+     * Computes the SHA3-256 hash of a string
+     * @param input the input string to hash
+     * @return the SHA3-256 hash as a byte array
+     * @throws NoSuchAlgorithmException if SHA3-256 is not available
+     */
+    public static byte[] sha3_256(String input) throws NoSuchAlgorithmException {
+        return digest("SHA3-256", input);
+    }
 }
